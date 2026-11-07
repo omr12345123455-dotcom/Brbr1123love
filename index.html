@@ -28,7 +28,6 @@
             text-align: center;
         }
         
-        /* شريط التنقل العلوي الفخم للتبديل بين الصفحات */
         .nav-tabs {
             display: flex;
             justify-content: space-around;
@@ -62,7 +61,6 @@
         .heart { font-size: 40px; color: #ff4d6d; animation: beat 1.2s infinite; margin: 10px 0; }
         p { font-size: 1.08rem; line-height: 1.8; color: #5c1321; text-align: justify; }
 
-        /* شاشة قفل الأمان والتعيين لأول مرة */
         .auth-box input {
             width: 85%; padding: 12px; margin: 12px 0;
             border: 2px solid #ffb3c6; border-radius: 12px;
@@ -75,7 +73,6 @@
         }
         button:hover { background: #c9184a; }
 
-        /* مشغل الأغاني الأنيق */
         .playlist-box {
             background: #fff0f3; padding: 15px; border-radius: 15px; margin: 15px 0; text-align: right;
         }
@@ -85,7 +82,6 @@
         }
         .song-item:last-child { border-bottom: none; }
 
-        /* ستايل النوتة الحقيقية */
         .notepad {
             background: #fffdf6; border: 1px solid #ffccd5;
             border-radius: 15px; padding: 20px; box-shadow: inset 0 0 15px rgba(0,0,0,0.02);
@@ -105,9 +101,7 @@
         .note-actions { text-align: left; margin-top: 8px; }
         .btn-sm { padding: 5px 12px; font-size: 0.85rem; margin-left: 5px; border-radius: 8px; }
         .btn-del { background: #6c757d; }
-        .btn-del:hover { background: #495057; }
 
-        /* معرض الصور الفخم للذكريات */
         .gallery-grid {
             display: grid; grid-template-columns: 1fr; gap: 15px; margin-top: 15px;
         }
@@ -123,22 +117,21 @@
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes beat { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
-        .hidden-section { display: none; }
     </style>
 </head>
 <body>
 
     <!-- بوابة الحماية والخصوصية لتسجيل الدخول -->
-    <div id="auth-gate" class="container auth-box">
+    <div id="auth-gate" class="container" style="display: block;">
         <h2 id="gate-title">بوابة الخصوصية والأمان 🔐</h2>
         <p id="gate-desc">الرجاء إدخال كلمة السر للدخول إلى المَلاذ</p>
         <input type="password" id="password-input" placeholder="اكتبي كلمة السر هنا...">
-        <br>
+        <br><br>
         <button onclick="handleAuth()">دخول البوابة</button>
     </div>
 
     <!-- شريط التبديل بين صفحات الموقع (Tabs) -->
-    <div id="nav-bar" class="nav-tabs hidden-section">
+    <div id="nav-bar" class="nav-tabs" style="display: none;">
         <button class="nav-link active" onclick="switchPage('home-page', this)">الرئيسية 🌸</button>
         <button class="nav-link" onclick="switchPage('music-page', this)">أغانينا 🎵</button>
         <button class="nav-link" onclick="switchPage('gallery-page', this)">ذكرياتنا 📸</button>
@@ -146,7 +139,7 @@
     </div>
 
     <!-- حاوية المحتوى الرئيسي للموقع -->
-    <div id="main-hub" class="container hidden-section" style="margin-top: 0;">
+    <div id="main-hub" class="container" style="margin-top: 0; display: none;">
         
         <!-- الصفحة 1: الرئيسية -->
         <div id="home-page" class="page-content active">
@@ -164,11 +157,11 @@
             <div class="playlist-box">
                 <div class="song-item">
                     <span>1. ماجد المهندس - مدمنك 👑</span>
-                    <button class="btn-sm" onclick="playTrack('https://files.catbox.moe/brxqug.m4a', 'ماجد المهندس - مدمنك')">تشغيل</button>
+                    <button class="btn-sm" onclick="playTrack('https://catbox.moe', 'ماجد المهندس - مدمنك')">تشغيل</button>
                 </div>
                 <div class="song-item">
                     <span>2. حبي إلك إدمان وقدام الكل 💘</span>
-                    <button class="btn-sm" onclick="playTrack('https://files.catbox.moe/0a0vk9.m4a', 'حبي إلك إدمان وقدام الكل')">تشغيل</button>
+                    <button class="btn-sm" onclick="playTrack('https://catbox.moe', 'حبي إلك إدمان وقدام الكل')">تشغيل</button>
                 </div>
             </div>
             
@@ -194,81 +187,72 @@
                 <div class="img-card"><img src="https://ibb.co" alt="Memory 7"><span>طفلتي المدللة 🐿️</span></div>
                 <div class="img-card"><img src="https://ibb.co" alt="Memory 8"><span>خليل الروح وأنيسها 👑</span></div>
                 <div class="img-card"><img src="https://ibb.co" alt="Memory 9"><span>مَلاذ الأمان 💘</span></div>
+                <div class="img-card"><img src="https://ibb.co" alt="Memory 10"><span>حرفكِ على الأرض 🚀</span></div>
+            </div>
+        </div>
 
-يا خوي، خد نفس عميق وهدّي نفسك، إنت مش غلطان لدرجة تدمر نفسيتك، وهي بتتصرف بدافع حب كبير وغيرة قاتلة مش بقصد النكد. نزول دموعك وضغطتك هادي دليل على إنك شاريها وبتحبها من قلبك، والموضوع كله "لخبطة مشاعر" وضغوطات تجمعت عليكم في نفس الوقت.
+        <!-- الصفحة 4: المفكرة -->
+        <div id="notes-page" class="page-content">
+            <h2>دفتر خواطركِ السري المحمي 📜</h2>
 
-عشان تطلع من هالمتاهة وتفهم السالفة صح، تعال نككككككككككشف الأوراق ونشوف شو عم بصير بقلبها وعقلها:
+}
 
-1. تحليل ردة فعلها (ليش شبت حريقة؟)
+function getNotes() { return JSON.parse(localStorage.getItem('abrar_real_notebook')) || []; }
 
-غيرة يمنية حارة وقاتلة: كلامها (حرق البسباس، شلشلوك، يا دبور) كله طالع من قهر حقيقي. البنت حست إنك رحت لمكان عام، وشفت بنات، وفوقها بعت لها فيديو فيه شعر بنت بيطير بوجهك! بالنسبة للبنت اللي بتحب، هاد المشهد "إعدام" لمشاعرها، حست إنك مش مقدر وجودها بقلبك.
+function renderNotes() {
+const notes = getNotes();
+const listDiv = document.getElementById('notes-list');
+if (notes.length === 0) {
+listDiv.innerHTML = "المفكرة فارغة حالياً.. اكتبِ أولى أسطركِ بالأعلى 🖋️";
+return;
+}
+listDiv.innerHTML = notes.map((n, index) => <div class="note-item"> <span style="font-size: 0.8rem; color: #adb5bd;">${n.date}</span> <p style="margin: 5px 0; white-space: pre-wrap; font-size:1.05rem;">${n.text}</p> <div class="note-actions"> <button class="btn-sm" onclick="loadNoteToEdit(${index})">تعديل</button> <button class="btn-sm btn-del" onclick="deleteNote(${index})">حذف</button> </div> </div>).join('');
+}
 
-تراكمات قديمة: هي قالت لك: "أنا ما بقول لك كل يوم قصايدي علشان ما تنزعج"، و*"صايرة كتير ما تحكي معي"*. هاد معناه إن البنت عندها عتب قديم ومتراكم إنك متغير عليها أو قل كلامك وهبالك معها، وفيديو الحديقة كان القشة اللي قسمت ظهر البعير وفجرت كل الزعل المخزن.
+function renderNotesForOmran() {
+const notes = getNotes();
+const listDiv = document.getElementById('omran-notes-list');
+if (notes.length === 0) {
+listDiv.innerHTML = "أبرار لم تكتب أي شيء في هذه المفكرة بعد.";
+return;
+}
+listDiv.innerHTML = notes.map(n => <div style="border-bottom: 1px solid #e2e8f0; padding: 8px 0;"> <span style="font-size:0.75rem; color:#94a3b8;">${n.date}</span> <p style="margin:5px 0; color:#334155; white-space: pre-wrap;">${n.text}</p> </div>).join('');
+}
 
-الاعتذار بالفويسات: كونها بعتت 3 فويسات طويلة تعتذر وتبرر، هاد أكبر دليل إنها بتموت فيك وما بدها تخسرك، بس غصتها من مشهد الفيديو أكبر من طاقتها على التحمل.
+function saveOrUpdateNote() {
+const textarea = document.getElementById('note-textarea');
+const editIndex = parseInt(document.getElementById('edit-index').value);
+const text = textarea.value.trim();
+if (!text) return alert('الرجاء كتابة كلماتكِ أولاً!');
 
-2. تحليل موقفك إنت (ليش إنت مخنوق؟)
+let notes = getNotes();
+const timestamp = new Date().toLocaleString('ar-EG', { hour12: true });
 
-ضغط الحياة: إنت مضغوط أصلاً من ظروفك والحياة (لعنة شكلك على قولتك)، وجات مشكلة الفيديو بوقت إنت ما عندك طاقة تتحمل فيه نقاش أو عتاب.
+if (editIndex === -1) {
+notes.push({ text: text, date: timestamp });
+} else {
+notes[editIndex].text = text;
+notes[editIndex].date = timestamp + " (تم التعديل)";
+document.getElementById('edit-index').value = "-1";
+document.getElementById('save-btn').innerText = "حفظ في الدفتر";
+}
+localStorage.setItem('abrar_real_notebook', JSON.stringify(notes));
+textarea.value = '';
+renderNotes();
+alert('تم الحفظ والتحديث بنجاح داخل الدفتر ✨');
+}
 
-التضحية اللي ما جابت نتيجة: إنت ضحيت بمباراة برشلونة (والمشجعين بيعرفوا شو يعني تترك مباراة عشان كول!)، وكلمتها 45 دقيقة وإنت مخنوق، ومع هيك حسيت إنها لسه بتعاتب وما قدرت ظرفك ونبرة صوتك التعبانة، وهاد اللي قهرك وزاد بكيتك.
+function loadNoteToEdit(index) {
+const notes = getNotes();
+document.getElementById('note-textarea').value = notes[index].text;
+document.getElementById('edit-index').value = index;
+document.getElementById('save-btn').innerText = "تحديث الخاطرة الحالية ✨";
+}
 
-جدول توضيحي: الكلمة ومعناها بقلب حبيبتك
-
-شو قالت لك بالظبط 🗣️شو قصدها الحقيقي بقلبها ❤️"يا وجه الدابة.. روح بحريقة"أنا مقهورة وبموت من الغيرة عليك، وبدي إياك تراضيني بقوة."أنا ضعيفة وأنت القوي"أنا مكسورة ومحتاجة تحسسني بالأمان وإنك ما بتشوف غيري."خصمة خصمة.. حمار"زعلانة منك بس ما بقدر أستغني عنك (دلع ممزوج بقهر)."صاير ما تسأل متل أول"أنا مشتاقة لاهتمامك القديم وخايفة تكون بطلت تحبني.
-
-🚀 خطوات عملية عشان ترجعوا السمن على عسل (وتريح راسك)
-
-اعطي نفسك ساعة بريك: لا تروح تكلمها وإنت بتبكي أو مخنوق. اغسل وجهك، واعرف إن المشكلة "سوء تفاهم وغيرة" وليست كره أو نهاية العلاقة.
-
-راضيها بذكاء واحتوي غيرتها: البنت محتاجة "أمان". ابعت لها رسالة صوتية (فويس) بنبرة هادية وحنونة، وقول لها:
-
-"يا عمري، حقك على راسي، أنا غبي إني بعت الفيديو وما انتبهت للبنت، أنا عيوني ما بتشوف بالدنيا بنت غيرك، وإنتي ست البنات كلهم. غِيرتك عليّ بتسوى الدنيا بس لا تحرقي قلبك وقلبي."
-
-برر ضغطتك بدون هجوم: فهمها إن نبرة صوتك التعبانة بالاتصال ما كانت زعل منها، بل من ضغط الحياة والدنيا، وقول لها: "أنا تركت برشلونة عشانك لأنك أهم من الدنيا، بس كنت تعبان وراسي بينفجر، وما حبيت أنكد عليكي بنبرتي التعبانة".
-
-ارجع لـ "هبالك" القديم: هي اشتاقت للشخص القديم اللي كان يكلمها ويهبل معها. بس تصفى النفوس، ارجع اضحك معها وشاركها يومك مثل الأول عشان تشيل فكرة "إنك تغيرت عليها" من راسها.
-
-البنت شارتك وبتحبك وميتة عليك، والدموع اللي بعيونك هالحين هي دليل إنك صادق. هدي بالك، السالفة أزمة غيرة وبتعدي بكلمتين حلوين وضمة صوتية دافية.
-
-عشان نكتب لها الرسالة الصح اللي تنهي الخلاف تماماً وتطيب خاطرها، قولي:
-
-هل تحب نكتب لها كلام بلهجتها (اليمنية) عشان تلمس قلبها بسرعة؟
-
-شو أكثر شي بتحسه بيسعدها لما تقوله لها (دلع معين، كلمة سر بينكم)؟
-
-يا خوي، خد نفس عميق جداً وصلي على النبي. إنت الحين بتمر بمرحلة اسمها "التحليل الزائد وقت الضغط"، وقاعد بتفسر كل شيء ضد نفسك وبتعذب قلبك على الفاضي.
-
-البنت بتموت فيك وبتعشقك، ووجودك عندها بالدنيا كلها، ومش واخدتك تسلية أبداً!
-
-عشان تقتنع وتهدي هاد القهر والنار اللي بقلبك، تعال نقرأ "الأدلة والبراهين" اللي هي بنفسها بعتتها لك اليوم الفجر، ونفكك عقدة الانستغرام والستوريات اللي جننتك:
-
-1. صدمة الورقة والدفتر (هاد مش كلام تسلية!)
-
-البنت غابت عن المدرسة لأنها مرضت من برودة السطح وهي بتكلمك (يعني مرضت بسببك ومن كثر التفكير والزعل)، وطول اليوم نايمة تعبانة.
-شوف شو كتبت لك بالورقة وصورتها لك الفجر:
-
-"أنا آسفة لزعلك ولنبرة صوتك تلك": البنت مانامت وهي بتفكر بنبرة صوتك التعبانة والمخنوقة بالاتصال، والورقة هادي كتبتها وهي بكامل عاطفتها عشان تراضيك.
-
-"أهبلي الوسيم.. محاربي وقلبي أنيسي وعيوني": هادي المصطلحات ما تنقال لشخص تسلية! هاد كلام بنت عاشقة، شايفتك سندها ومحاربها، وبتعتذر لك عن أي "انطفاء أو حزن" دخل قلبك بسبتها.
-
-"صليت ودعيت لك يا قلبي": أول ما صحيت الفجر، صلت ودعت لك إنت قبل ما تدعي لنفسها.
-
-2. لغز ستوريات وإعادات النشر بالانستغرام (دز أمها فعلاً بس افهمها!)
-
-إنت انقهرت لأنك شفتها عاملة إعادة نشر (Repost) لفيديوهات مستفزة. يا خوي، البنات لما يزعلوا أو يحسوا إن حبيبهم "مضمون" أو "مش مهتم مثل الأول"، بيلجأوا لحركات طفولية واستفزازية بالانستغرام لسببين وبس:
-
-بدها تشوف ردة فعلك: بدها ترفع ضغطك عشان تروح وتعاتبها وتقول لها "ليش منزلة هاد؟"، هي محتاجة تشوف غيرة بقرارة نفسك وتأكيد إنك لسه بتموت عليها وما بتتحمل تشوفها بتلمح لشيء ثاني.
-
-ترند "صباحي أنت": شوف الستوري الأخير اللي نزلته "صباحي أنت ثم لا حديث بعدك" هاد هو المقصود فيه إنت بالذات! نزلت الفيديوهات الثانية عشان "تلمح وتقهرك" لأنك سكرت الخط بوجهها ونمت، والستوري الأخير هاد لك إنت شخصياً عشان تقول لك إنت صباحي.
-
-📊 مقارنة سريعة: كلامها الخاص بالدفتر 🆚 حركاتها بالانستغرام
-
-ما أرسلته لك خاص (الحقيقة والواقع) 📝ما تنشره بالانستغرام (السينما والاستفزاز) 🎬كتبت لك رسالة حب واعتذار بخط يدها بالدفتر.بتعمل إعادة نشر لترندات عامة ومكررة.اعترفت بمرضها ودعائها لك بالصلاة.بتحاول تبين قوية ومش فارق معها قدام الناس.نادتك "روحي وأجمل أشيائي".بتلعب بأعصابك عشان تخلّيك تتحرك وتغار عليها.
-
-💡 شو تعمل هالحين بالظبط عشان تنهي هاد الفيلم؟
-
-البنت الحين مريضة، وبعتت لك اعتذار من أجمل ما يكون وصورت لك خط يدها ودعت لك. انسى الانستغرام تماماً ولا تبين لها إنك بتراقب الـ Reposts لأنها لو عرفت إنك انقهرت رح تتبسط وتعرف إن خطتها نجحت!
-
-الخطوة الصح:
-ابعت لها فويس أو رسالة كلها حنية وطاقة إيجابية، وقول لها:
+function deleteNote(index) {
+if (!confirm('هل أنتِ متأكدة من الحذف؟')) return;
+let notes = getNotes();
+notes.splice(index, 1);
+localStorage.setItem('abrar_real_notebook', JSON.stringify(notes));
+renderNotes();
+}
